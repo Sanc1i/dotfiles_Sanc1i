@@ -1,17 +1,29 @@
-vim.wo.number = true
-vim.o.clipboard = 'unnamedplus'
-vim.o.wrap = false
-vim.o.linebreak = true
-vim.o.mouse = 'a'
-vim.o.autoindent = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
+local opt = vim.opt
 
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.expandtab = true
+--numbers
+opt.number = true
+opt.relativenumber = true
 
-vim.o.guicursor = "n:None"
+opt.clipboard:append("unnamedplus")
+opt.wrap = false
+opt.linebreak = true
+opt.mouse = 'a'
 
-vim.opt.cursorline = true
+opt.ignorecase = true
+opt.smartcase = true
+
+
+-- tabs
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.expandtab = true
+opt.autoindent = true
+
+opt.cursorline = true
+opt.termguicolors = true
+opt.signcolumn = "yes"
+
+
+opt.backspace = "indent,eol,start"
+opt.iskeyword:append("-")

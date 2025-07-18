@@ -227,25 +227,5 @@ return {
                 end, { 'i', 's' }),
             }),
         })
-    end,
-    vim.api.nvim_create_autocmd('User', {
-        pattern = 'LspSetup',
-        callback = function()
-            require('lspconfig').lua_ls.setup({
-                settings = {
-                    Lua = {
-                        runtime = { version = 'LuaJIT' },
-                        diagnostics = { globals = { 'vim' } },
-                        workspace = {
-                            library = vim.api.nvim_get_runtime_file("", true),
-                            checkThirdParty = false
-                        },
-                        telemetry = { enable = false }
-                    }
-                }
-            })
-            print("Lua_ls settings applied:",
-                vim.inspect(require('lspconfig').lua_ls.document_config.default_config.settings))
-        end
-    })
+    end
 }
